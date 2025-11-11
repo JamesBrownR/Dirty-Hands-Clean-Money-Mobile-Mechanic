@@ -15,11 +15,15 @@
         :root {
             --primary-color: #1a1a1a;
             --secondary-color: #2d2d2d;
-            --accent-color: #c41e3a;
+            --accent-color: #8B4513;
+            --accent-hover: #654321;
+            --dirt-brown: #6B4423;
+            --light-brown: #A0826D;
             --text-light: #ffffff;
             --text-dark: #1a1a1a;
-            --gray-light: #ffffff;
+            --gray-light: #f8f5f2;
             --gray-medium: #cccccc;
+            --success-green: #4CAF50;
         }
 
         body {
@@ -29,7 +33,6 @@
             overflow-x: hidden;
         }
 
-        /* Top Contact Bar */
         .top-bar {
             background-color: var(--accent-color);
             color: var(--text-light);
@@ -40,19 +43,20 @@
             position: sticky;
             top: 0;
             z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
         .top-bar a {
             color: var(--text-light);
             text-decoration: none;
         }
 
-        /* Navigation */
         nav {
             background-color: var(--primary-color);
             padding: 15px 0;
             position: sticky;
             top: 48px;
             z-index: 999;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
         }
         nav ul {
             list-style: none;
@@ -70,76 +74,76 @@
             transition: color 0.3s;
         }
         nav a:hover {
-            color: var(--accent-color);
+            color: var(--light-brown);
         }
 
-        /* Hero Section - FIXED */
-.hero {
-    height: 100vh;
-    min-height: 600px;
-    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    position: relative;
-    width: 100%;
-}
-.hero-content {
-    z-index: 1;
-    max-width: 900px;
-    width: 100%;
-    padding: 20px;
-}
-.hero h1 {
-    font-size: clamp(2.5rem, 8vw, 5.5rem);
-    color: var(--text-light);
-    margin-bottom: 16px;
-    font-weight: 900;
-    letter-spacing: -1.5px;
-    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
-}
-.hero .tagline {
-    font-size: clamp(1.3rem, 3vw, 1.8rem);
-    color: #ffcccc;
-    margin-bottom: 10px;
-    font-weight: 600;
-}
-.hero p {
-    font-size: clamp(1.1rem, 2.5vw, 1.4rem);
-    color: var(--text-light);
-    margin-bottom: 30px;
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
-    opacity: 0.95;
-}
-.cta-button {
-    display: inline-block;
-    background-color: var(--accent-color);
-    color: var(--text-light);
-    padding: 20px 50px;
-    text-decoration: none;
-    font-size: 1.3rem;
-    font-weight: 700;
-    border: none;
-    cursor: pointer;
-    transition: all 0.3s;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-.cta-button:hover {
-    background-color: #a01829;
-    transform: translateY(-3px);
-    box-shadow: 0 10px 30px rgba(196, 30, 58, 0.4);
-}
+        .hero {
+            height: 100vh;
+            min-height: 600px;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            width: 100%;
+        }
+        .hero-content {
+            z-index: 1;
+            max-width: 900px;
+            width: 100%;
+            padding: 20px;
+        }
+        .hero h1 {
+            font-size: clamp(2.5rem, 8vw, 5.5rem);
+            color: var(--text-light);
+            margin-bottom: 16px;
+            font-weight: 900;
+            letter-spacing: -1.5px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+        .hero .tagline {
+            font-size: clamp(1.3rem, 3vw, 1.8rem);
+            color: var(--light-brown);
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        .hero p {
+            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+            color: var(--text-light);
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.95;
+        }
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--text-light);
+            padding: 20px 50px;
+            text-decoration: none;
+            font-size: 1.3rem;
+            font-weight: 700;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: 8px;
+        }
+        .cta-button:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(139, 69, 19, 0.4);
+        }
         .scroll-indicator {
             position: absolute;
             bottom: 30px;
             left: 50%;
             transform: translateX(-50%);
-            color: var(--text-light);
+            color: var(--light-brown);
             font-size: 2rem;
             animation: bounce 2s infinite;
         }
@@ -149,7 +153,6 @@
             60% { transform: translateX(-50%) translateY(-5px); }
         }
 
-        /* Section Styling */
         section {
             padding: 80px 20px;
             max-width: 1200px;
@@ -166,7 +169,6 @@
             font-weight: 700;
         }
 
-        /* Services Grid */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -179,6 +181,7 @@
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             transition: all 0.3s;
             border-radius: 12px;
+            border-top: 4px solid var(--accent-color);
         }
         .service-card:hover {
             transform: translateY(-8px);
@@ -190,7 +193,6 @@
             font-size: 1.5rem;
         }
 
-        /* WORK GALLERY - FIXED */
         .work-gallery {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -202,6 +204,7 @@
             border-radius: 12px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
             transition: transform 0.3s;
+            position: relative;
         }
         .work-item:hover {
             transform: scale(1.03);
@@ -213,7 +216,6 @@
             display: block;
         }
 
-        /* Reviews */
         .reviews-container {
             max-width: 900px;
             margin: 0 auto;
@@ -224,6 +226,7 @@
             margin-bottom: 25px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
             border-radius: 12px;
+            border-left: 4px solid var(--accent-color);
         }
         .review-header {
             display: flex;
@@ -239,14 +242,14 @@
             color: var(--primary-color);
         }
         .stars {
-            color: #ffd700;
+            color: #ffa500;
             font-size: 1.2rem;
             letter-spacing: 2px;
         }
         .show-more-btn {
             display: block;
             margin: 40px auto 0;
-            background-color: var(--secondary-color);
+            background-color: var(--accent-color);
             color: var(--text-light);
             padding: 15px 40px;
             border: none;
@@ -256,22 +259,23 @@
             transition: background-color 0.3s;
         }
         .show-more-btn:hover {
-            background-color: var(--primary-color);
+            background-color: var(--accent-hover);
         }
         .hidden { display: none; }
-/* Map Container */
+
         .map-container {
             background: white;
             padding: 20px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
         }
-
         .map-container iframe {
             width: 100%;
             height: 450px;
             border: 0;
+            border-radius: 8px;
         }
-        /* Contact & Map */
+
         .contact-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -318,10 +322,9 @@
             transition: background-color 0.3s;
         }
         .submit-btn:hover {
-            background-color: #a01829;
+            background-color: var(--accent-hover);
         }
 
-        /* Hours */
         .hours-box {
             background: white;
             padding: 40px;
@@ -338,7 +341,6 @@
         }
         .hours-row:last-child { border-bottom: none; }
 
-        /* Social & Square */
         .social-links {
             display: flex;
             justify-content: center;
@@ -348,7 +350,7 @@
         }
         .social-link {
             padding: 15px 30px;
-            background-color: var(--secondary-color);
+            background-color: var(--accent-color);
             color: white;
             text-decoration: none;
             font-weight: 600;
@@ -356,7 +358,7 @@
             transition: background-color 0.3s;
         }
         .social-link:hover {
-            background-color: var(--accent-color);
+            background-color: var(--accent-hover);
         }
         .square-section {
             text-align: center;
@@ -369,21 +371,42 @@
         }
         .square-button {
             display: inline-block;
-            background-color: #000;
+            background-color: var(--accent-color);
             color: white;
             padding: 18px 45px;
             text-decoration: none;
             font-size: 1.2rem;
             font-weight: 600;
             margin-top: 20px;
-            border-radius: 50px;
+            border-radius: 8px;
             transition: background-color 0.3s;
         }
         .square-button:hover {
-            background-color: #333;
+            background-color: var(--accent-hover);
         }
 
-        /* Footer */
+        .trust-badges {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-top: 60px;
+            padding: 40px 20px;
+            background: white;
+            border-radius: 12px;
+        }
+        .badge {
+            text-align: center;
+        }
+        .badge-icon {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+        .badge-text {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
         footer {
             background-color: var(--primary-color);
             color: var(--text-light);
@@ -392,7 +415,6 @@
             font-size: 0.9rem;
         }
 
-        /* Mobile */
         @media (max-width: 768px) {
             .contact-grid {
                 grid-template-columns: 1fr;
@@ -411,12 +433,10 @@
 </head>
 <body>
 
-    <!-- Top Contact Bar -->
     <div class="top-bar">
         📞 <a href="tel:5722288494">(572) 228-8494</a> – Same-Day Mobile Repairs in Edmond
     </div>
 
-    <!-- Navigation -->
     <nav>
         <ul>
             <li><a href="#home">Home</a></li>
@@ -428,47 +448,65 @@
         </ul>
     </nav>
 
-    <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-content">
-            <h1>Dirty Hands<br><span style="color:#c41e3a;">Clean Money</span></h1>
-
+            <h1>Dirty Hands<br><span style="color:#A0826D;">Clean Money</span></h1>
+            <p class="tagline">Mobile Mechanic • Edmond, OK</p>
+            <p>Professional repairs at your location. Same-day service available.</p>
+            <a href="tel:5722288494" class="cta-button">Call (572) 228-8494</a>
         </div>
         <div class="scroll-indicator">↓</div>
     </section>
 
-    <!-- Services -->
     <section id="services">
         <h2>Our Services</h2>
         <div class="services-grid">
             <div class="service-card">
                 <h3>Oil Changes</h3>
-                <p>Full synthetic or conventional oil changes.</p>
+                <p>Full synthetic or conventional oil changes performed at your location.</p>
             </div>
             <div class="service-card">
                 <h3>Brake Service</h3>
-                <p>Pads, rotors, fluid flush.</p>
+                <p>Complete brake repairs including pads, rotors, and fluid flush.</p>
             </div>
             <div class="service-card">
                 <h3>Diagnostics</h3>
-                <p>Scan, diagnose, and fix on-site.</p>
+                <p>Professional scan, diagnose, and repair on-site with modern equipment.</p>
             </div>
             <div class="service-card">
                 <h3>Battery Replacement</h3>
-                <p>We test, replace, and recycle batteries.</p>
+                <p>We test, replace, and properly recycle old batteries.</p>
             </div>
             <div class="service-card">
                 <h3>Tune-Ups</h3>
-                <p>Spark plugs, filters, performance boost.</p>
+                <p>Spark plugs, filters, and complete performance optimization.</p>
             </div>
             <div class="service-card">
                 <h3>General Repairs</h3>
-                <p>Belts, hoses, alternators.</p>
+                <p>Belts, hoses, alternators, starters, and more.</p>
+            </div>
+        </div>
+
+        <div class="trust-badges">
+            <div class="badge">
+                <div class="badge-icon">🚗</div>
+                <div class="badge-text">Mobile Service</div>
+            </div>
+            <div class="badge">
+                <div class="badge-icon">⏱️</div>
+                <div class="badge-text">Same-Day Repairs</div>
+            </div>
+            <div class="badge">
+                <div class="badge-icon">💯</div>
+                <div class="badge-text">Quality Guaranteed</div>
+            </div>
+            <div class="badge">
+                <div class="badge-icon">💰</div>
+                <div class="badge-text">Fair Pricing</div>
             </div>
         </div>
     </section>
 
-    <!-- Work Gallery - FIXED -->
     <section id="work">
         <h2>Our Work</h2>
         <div class="work-gallery">
@@ -490,10 +528,15 @@
             <div class="work-item">
                 <img src="Dirty-Hands-Clean-Money-Mobile-Mechanic6.png" alt="Mobile repair in Edmond" loading="lazy">
             </div>
+            <div class="work-item">
+                <img src="Dirty-Hands-Clean-Money-Mobile-Mechanic7.png" alt="Engine repair service" loading="lazy">
+            </div>
+            <div class="work-item">
+                <img src="Dirty-Hands-Clean-Money-Mobile-Mechanic8.png" alt="Professional mobile mechanic at work" loading="lazy">
+            </div>
         </div>
     </section>
 
-    <!-- Reviews -->
     <section id="reviews">
         <h2>Customer Reviews</h2>
         <div class="reviews-container">
@@ -502,7 +545,6 @@
         </div>
     </section>
 
-   <!-- Hours Section -->
     <section id="hours">
         <h2>Business Hours</h2>
         <div class="hours-box">
@@ -540,7 +582,6 @@
         </p>
     </section>
 
-    <!-- Contact -->
     <section id="contact">
         <h2>Contact Us</h2>
         <div class="contact-grid">
@@ -569,32 +610,28 @@
                     </div>
                     <div class="form-group">
                         <label for="message">Message</label>
-                        <textarea id="message" name="message" placeholder="Car make/model + issue?"></textarea>
+                        <textarea id="message" name="message" rows="4" placeholder="Tell us about your car (make/model) and the issue..."></textarea>
                     </div>
                     <button type="submit" class="submit-btn">Send Message</button>
                 </form>
             </div>
-         <div class="map-container">
+            <div class="map-container">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3242.5237671006753!2d-97.47063682489255!3d35.63946517173024!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87b21fa7bdc67291%3A0xa8f3a56c454abd82!2sDirty%20Hands%20Clean%20Money%20Mobile%20Mechanic!5e0!3m2!1sen!2sus!4v1762897612628!5m2!1sen!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
 
-        <!-- Social Links -->
         <div class="social-links">
             <a href="https://www.google.com/maps/place/Dirty+Hands+Clean+Money+Mobile+Mechanic/@35.6394652,-97.4706368,17z/data=!3m1!4b1!4m6!3m5!1s0x87b21fa7bdc67291:0xa8f3a56c454abd82!8m2!3d35.6394609!4d-97.4660234!16s%2Fg%2F11xgntmpkx?entry=ttu&g_ep=EgoyMDI1MTEwOS4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="social-link">Google Business</a>
             <a href="https://nextdoor.com/pages/dirty-hands-clean-money-mobile-mechanic-edmond-ok/" target="_blank" class="social-link">Nextdoor</a>
         </div>
 
-        <!-- Square Payment Section -->
         <div class="square-section">
             <h3 style="margin-bottom: 15px; color: var(--primary-color);">Online Booking & Payment</h3>
             <p style="color: #555; margin-bottom: 20px;">Schedule your service and pay securely online with Square</p>
-            <!-- Replace YOUR_LOCATION_ID with your actual Square location ID -->
             <a href="https://squareup.com/appointments/book/YOUR_LOCATION_ID" target="_blank" class="square-button">Book Appointment</a>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <p><strong>Dirty Hands Clean Money Mobile Mechanic</strong></p>
         <p>1406 Pine Oak Pl, Edmond, OK 73034</p>
@@ -603,16 +640,53 @@
     </footer>
 
     <script>
-        const reviews = [
-            { "name": "Brent Lawson", "rating": 5, "body": "Coty made a horrible situation (sheared cam shaft) much more bearable. He was quick to respond, knowledgeable, answered every question I had and frequently updated me on the status of the repair. My very best mobile mechanic experience, heck best mechanic experience period." },
-            { "name": "Jaime", "rating": 5, "body": "My van suddenly did not want to turn over after trying multiple times. I contacted Coty and without hesitation, he came through. He accurately diagnosed my car, fixed the problems in a timely manner, and all at a good price." },
-            { "name": "House on a Hill", "rating": 5, "body": "This guy is a real mechanic. As soon as he got out of his vehicle, he walked over, and I started my car. Within a few seconds, he guessed what the problem was, then confirmed it with the diagnostic tool." },
-            { "name": "Matt Biscoe", "rating": 5, "body": "As a business owner pulling equipment out of service means losing revenue. We called Coty last minute and he had us up and running within an hour. 10/10 would recommend!!!" },
-            { "name": "Mark Hochstetler", "rating": 5, "body": "Cody took care of a faulty starter I had and had me fixed up in about 30 minutes. Very friendly and professional. Will use again." },
-            { "name": "Ryan Stotts", "rating": 5, "body": "Does good quality work at a fair price. Recommended." },
-            { "name": "Noah McGraw", "rating": 5, "body": "Honest, kind and fair. Highly recommend!" },
-            { "name": "Craig Jones", "rating": 1, "body": "We made an appointment with Cody for Wednesday... Never heard from him again." }
-        ];
+        [
+    {
+        "name": "Brent Lawson",
+        "rating": 5,
+        "body": "Coty made a horrible situation (sheared cam shaft) much more bearable. He was quick to respond, knowledgeable, answered every question I had and frequently updated me on the status of the repair. My very best mobile mechanic experience, heck best mechanic experience period."
+    },
+    {
+        "name": "Jaime",
+        "rating": 5,
+        "body": "My van suddenly did not want to turn over after trying multiple times. I contacted Coty and without hesitation, he came through. He accurately diagnosed my car, fixed the problems in a timely manner, and all at a good price. He replaced my … More"
+    },
+    {
+        "name": "House on a Hill",
+        "rating": 5,
+        "body": "This guy is a real mechanic. As soon as he got out of his vehicle, he walked over, and I started my car. Within a few seconds, he guessed what the problem was, then confirmed it with the diagnostic tool that plugs into the car. He went … More"
+    },
+    {
+        "name": "Matt Biscoe",
+        "rating": 5,
+        "body": "As a business owner pulling equipment out of service means losing revenue. We called Coty last minute and he had us up and running within an hour. He was able to quickly diagnose our issue and had everything he needed to repair our van. 10/10 would recommend!!!"
+    },
+    {
+        "name": "Mark Hochstetler",
+        "rating": 5,
+        "body": "Cody took care of a faulty starter I had and had me fixed up in about 30 minutes. Very friendly and professional. Will use again."
+    },
+    {
+        "name": "Ryan Stotts",
+        "rating": 5,
+        "body": "Does good quality work at a fair price. Recommended."
+    },
+    {
+        "name": "Noah McGraw",
+        "rating": 5,
+        "body": "Honest, kind and fair. Highly recommend!"
+    },
+    {
+        "name": "Kaylee Laster",
+        "rating": 5,
+        "body": ""
+    },
+    {
+        "name": "Craig Jones",
+        "rating": 1,
+        "body": "We made an appointment with Cody for Wednesday, I called to confirm,he had to order a tool and rescheduled for Friday. I called Friday, the tool didn't come in, rescheduled for Sunday. He didn't show. I called his number and it went straight to voice. Never heard from him again."
+    }
+]
 
         let currentReviewIndex = 0;
         const reviewsPerLoad = 6;
@@ -654,7 +728,6 @@
             displayReviews(currentReviewIndex, reviewsPerLoad);
         });
 
-        // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -664,9 +737,8 @@
             });
         });
 
-        // Form alert
         document.getElementById('contact-form').addEventListener('submit', function(e) {
-            alert('Thank you! We’ll call you within 15 minutes.');
+            alert('Thank you! We'll call you within 15 minutes.');
         });
     </script>
 </body>
