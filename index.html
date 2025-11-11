@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dirty Hands Clean Money Mobile Mechanic | Professional Mobile Mechanic Services in Edmond, OK</title>
+    <meta name="description" content="Professional mobile mechanic services in Edmond, OK. Expert automotive repair at your location. Call (572) 228-8494 for immediate service.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #1a1a1a;
+            --secondary-color: #2d2d2d;
+            --accent-color: #c41e3a;
+            --text-light: #ffffff;
+            --text-dark: #1a1a1a;
+            --gray-light: #f5f5f5;
+            --gray-medium: #cccccc;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            background-image: url('Dirty-Hands-Clean-Money-Mobile-Mechanic.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: clamp(2rem, 6vw, 4.5rem);
+            color: var(--text-light);
+            margin-bottom: 20px;
+            font-weight: 700;
+            letter-spacing: -1px;
+        }
+
+        .hero p {
+            font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+            color: var(--text-light);
+            margin-bottom: 40px;
+            max-width: 700px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--text-light);
+            padding: 18px 45px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            background-color: #a01829;
+            transform: translateY(-2px);
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--text-light);
+            font-size: 2rem;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+            40% { transform: translateX(-50%) translateY(-10px); }
+            60% { transform: translateX(-50%) translateY(-5px); }
+        }
+
+        /* Top Contact Bar */
+        .top-bar {
+            background-color: var(--accent-color);
+            color: var(--text-light);
+            padding: 12px 20px;
+            text-align: center;
+            font-size: 1.1rem;
+            font-weight: 600;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .top-bar a {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        .top-bar a:hover {
+            opacity: 0.8;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: var(--primary-color);
+            padding: 15px 0;
+            position: sticky;
+            top: 48px;
+            z-index: 999;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            padding: 0 20px;
+        }
+
+        nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Section Styling */
+        section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        section:nth-child(even) {
+            background-color: var(--gray-light);
+        }
+
+        h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 40px;
+            text-align: center;
+            color: var(--primary-color);
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .service-card {
+            background: white;
+            padding: 35px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-card h3 {
+            color: var(--accent-color);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .service-card p {
+            color: #555;
+            line-height: 1.8;
+        }
+
+        /* Reviews Section */
+        .reviews-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .review-card {
+            background: white;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .review-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .review-name {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--primary-color);
+        }
+
+        .stars {
+            color: #ffd700;
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+        }
+
+        .review-body {
+            color: #555;
+            line-height: 1.8;
+        }
+
+        .show-more-btn {
+            display: block;
+            margin: 40px auto 0;
+            background-color: var(--secondary-color);
+            color: var(--text-light);
+            padding: 15px 40px;
+            border: none;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .show-more-btn:hover {
+            background-color: var(--primary-color);
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        /* Contact Form */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .contact-form {
+            background: white;
+            padding: 40px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid var(--gray-medium);
+            font-size: 1rem;
+            font-family: inherit;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--accent-color);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-btn {
+            background-color: var(--accent-color);
+            color: var(--text-light);
+            padding: 15px 40px;
+            border: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+
+        .submit-btn:hover {
+            background-color: #a01829;
+        }
+
+        /* Map Container */
+        .map-container {
+            background: white;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 450px;
+            border: 0;
+        }
+
+        /* Hours Section */
+        .hours-box {
+            background: white;
+            padding: 40px;
+            max-width: 600px;
+            margin: 40px auto 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .hours-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid var(--gray-medium);
+        }
+
+        .hours-row:last-child {
+            border-bottom: none;
+        }
+
+        .hours-day {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .hours-time {
+            color: #555;
+        }
+
+        /* Social Links */
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .social-link {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: var(--secondary-color);
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+
+        .social-link:hover {
+            background-color: var(--accent-color);
+        }
+
+        /* Square Payment Section */
+        .square-section {
+            text-align: center;
+            background: white;
+            padding: 40px;
+            max-width: 600px;
+            margin: 40px auto 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .square-button {
+            display: inline-block;
+            background-color: #000;
+            color: white;
+            padding: 18px 45px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+
+        .square-button:hover {
+            background-color: #333;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            nav ul {
+                gap: 15px;
+            }
+
+            nav a {
+                font-size: 0.9rem;
+            }
+
+            .top-bar {
+                font-size: 1rem;
+            }
+
+            section {
+                padding: 60px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Contact Bar -->
+    <div class="top-bar">
+        📞 <a href="tel:5722288494">(572) 228-8494</a> - Call Now for Immediate Service!
+    </div>
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+            <li><a href="#hours">Hours</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Dirty Hands Clean Money Mobile Mechanic</h1>
+            <p>Professional Mobile Mechanic Services in Edmond, OK - We Come To You</p>
+            <a href="tel:5722288494" class="cta-button">Call (572) 228-8494</a>
+        </div>
+        <div class="scroll-indicator">↓</div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <h2>Our Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Oil Changes</h3>
+                <p>Professional oil change service at your location. We use quality oils and filters to keep your engine running smoothly.</p>
+            </div>
+            <div class="service-card">
+                <h3>Brake Service</h3>
+                <p>Complete brake inspection and repair including pads, rotors, calipers, and brake fluid service.</p>
+            </div>
+            <div class="service-card">
+                <h3>Diagnostic Services</h3>
+                <p>Advanced diagnostic equipment to identify and resolve check engine lights and vehicle issues.</p>
+            </div>
+            <div class="service-card">
+                <h3>Battery Service</h3>
+                <p>Battery testing, replacement, and electrical system diagnostics to keep you on the road.</p>
+            </div>
+            <div class="service-card">
+                <h3>Tune-Ups</h3>
+                <p>Comprehensive tune-up services including spark plugs, filters, and performance optimization.</p>
+            </div>
+            <div class="service-card">
+                <h3>General Repairs</h3>
+                <p>Wide range of mechanical repairs performed at your home or office for maximum convenience.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews">
+        <h2>Customer Reviews</h2>
+        <div class="reviews-container">
+            <div id="reviews-list"></div>
+            <button id="show-more-reviews" class="show-more-btn hidden">Show More Reviews</button>
+        </div>
+    </section>
+
+    <!-- Hours Section -->
+    <section id="hours">
+        <h2>Business Hours</h2>
+        <div class="hours-box">
+            <div class="hours-row">
+                <span class="hours-day">Monday</span>
+                <span class="hours-time">7:30 AM – 9:30 PM</span>
+            </div>
+            <div class="hours-row">
+                <span class="hours-day">Tuesday</span>
+                <span class="hours-time">7:30 AM – 9:30 PM</span>
+            </div>
+            <div class="hours-row">
+                <span class="hours-day">Wednesday</span>
+                <span class="hours-time">7:30 AM – 9:30 PM</span>
+            </div>
+            <div class="hours-row">
+                <span class="hours-day">Thursday</span>
+                <span class="hours-time">7:30 AM – 9:30 PM</span>
+            </div>
+            <div class="hours-row">
+                <span class="hours-day">Friday</span>
+                <span class="hours-time">7:30 AM – 9:30 PM</span>
+            </div>
+            <div class="hours-row">
+                <span class="hours-day">Saturday</span>
+                <span class="hours-time">7:30 AM – 9:30 PM</span>
+            </div>
+            <div class="hours-row">
+                <span class="hours-day">Sunday</span>
+                <span class="hours-time">Closed</span>
+            </div>
+        </div>
+        <p style="text-align: center; margin-top: 20px; color: #555;">
+            <strong>Location:</strong> 1406 Pine Oak Pl, Edmond, OK 73034
+        </p>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <div class="contact-grid">
+            <div class="contact-form">
+                <h3 style="margin-bottom: 25px; color: var(--primary-color);">Send Us a Message</h3>
+                <form id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                    <div class="form-group">
+                        <label for="name">Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone *</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="service">Service Needed</label>
+                        <select id="service" name="service">
+                            <option value="">Select a service</option>
+                            <option value="oil-change">Oil Change</option>
+                            <option value="brake-service">Brake Service</option>
+                            <option value="diagnostics">Diagnostic Service</option>
+                            <option value="battery">Battery Service</option>
+                            <option value="tune-up">Tune-Up</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3242.5237671006753!2d-97.47063682489255!3d35.63946517173024!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87b21fa7bdc67291%3A0xa8f3a56c454abd82!2sDirty%20Hands%20Clean%20Money%20Mobile%20Mechanic!5e0!3m2!1sen!2sus!4v1762897612628!5m2!1sen!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+
+        <!-- Social Links -->
+        <div class="social-links">
+            <a href="https://www.google.com/maps/place/Dirty+Hands+Clean+Money+Mobile+Mechanic/@35.6394652,-97.4706368,17z/data=!3m1!4b1!4m6!3m5!1s0x87b21fa7bdc67291:0xa8f3a56c454abd82!8m2!3d35.6394609!4d-97.4660234!16s%2Fg%2F11xgntmpkx?entry=ttu&g_ep=EgoyMDI1MTEwOS4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="social-link">Google Business</a>
+            <a href="https://nextdoor.com/pages/dirty-hands-clean-money-mobile-mechanic-edmond-ok/" target="_blank" class="social-link">Nextdoor</a>
+        </div>
+
+        <!-- Square Payment Section -->
+        <div class="square-section">
+            <h3 style="margin-bottom: 15px; color: var(--primary-color);">Online Booking & Payment</h3>
+            <p style="color: #555; margin-bottom: 20px;">Schedule your service and pay securely online with Square</p>
+            <!-- Replace YOUR_LOCATION_ID with your actual Square location ID -->
+            <a href="https://squareup.com/appointments/book/YOUR_LOCATION_ID" target="_blank" class="square-button">Book Appointment</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p><strong>Dirty Hands Clean Money Mobile Mechanic</strong></p>
+        <p>1406 Pine Oak Pl, Edmond, OK 73034</p>
+        <p>Phone: <a href="tel:5722288494" style="color: var(--text-light);">(572) 228-8494</a></p>
+        <p style="margin-top: 20px;">&copy; 2024 Dirty Hands Clean Money Mobile Mechanic. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Reviews Array - Add your reviews here
+        const reviews = [
+            { name: "Customer 1", rating: 5, body: "" },
+            { name: "Customer 2", rating: 5, body: "" },
+            { name: "Customer 3", rating: 5, body: "" },
+            { name: "Customer 4", rating: 5, body: "" },
+            { name: "Customer 5", rating: 5, body: "" },
+            { name: "Customer 6", rating: 5, body: "" }
+        ];
+
+        let currentReviewIndex = 0;
+        const reviewsPerLoad = 6;
+
+        function displayReviews(startIndex, count) {
+            const reviewsList = document.getElementById('reviews-list');
+            const endIndex = Math.min(startIndex + count, reviews.length);
+
+            for (let i = startIndex; i < endIndex; i++) {
+                const review = reviews[i];
+                const reviewCard = document.createElement('div');
+                reviewCard.className = 'review-card';
+                reviewCard.innerHTML = `
+                    <div class="review-header">
+                        <div class="review-name">${review.name}</div>
+                        <div class="stars">${'★'.repeat(review.rating)}</div>
+                    </div>
+                    ${review.body ? `<div class="review-body">${review.body}</div>` : ''}
+                `;
+                reviewsList.appendChild(reviewCard);
+            }
+
+            currentReviewIndex = endIndex;
+
+            // Update button
+            const showMoreBtn = document.getElementById('show-more-reviews');
+            const remainingReviews = reviews.length - currentReviewIndex;
+
+            if (remainingReviews > 0) {
+                showMoreBtn.classList.remove('hidden');
+                const nextLoad = Math.min(remainingReviews, reviewsPerLoad);
+                showMoreBtn.textContent = `Show ${nextLoad} More Review${nextLoad > 1 ? 's' : ''} (Total ${remainingReviews})`;
+            } else {
+                showMoreBtn.classList.add('hidden');
+            }
+        }
+
+        // Initial load
+        displayReviews(0, reviewsPerLoad);
+
+        // Show more button click handler
+        document.getElementById('show-more-reviews').addEventListener('click', function() {
+            displayReviews(currentReviewIndex, reviewsPerLoad);
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Form submission handler
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            // Note: Replace YOUR_FORM_ID in the form action with your Formspree ID
+            // or implement your own email handling backend
+            alert('Thank you for your message! We will contact you soon.');
+        });
+    </script>
+</body>
+</html>
