@@ -117,11 +117,9 @@
             display: inline-block;
             background-color: var(--accent-color);
             color: var(--text-light);
-            padding: 18px 50px;
             text-decoration: none;
             font-size: 1.3rem;
             font-weight: 700;
-            border-radius: 50px;
             transition: all 0.3s ease;
             box-shadow: 0 6px 15px rgba(196, 30, 58, 0.4);
         }
@@ -255,7 +253,18 @@
             background-color: var(--primary-color);
         }
         .hidden { display: none; }
+/* Map Container */
+        .map-container {
+            background: white;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
 
+        .map-container iframe {
+            width: 100%;
+            height: 450px;
+            border: 0;
+        }
         /* Contact & Map */
         .contact-grid {
             display: grid;
@@ -263,7 +272,7 @@
             gap: 40px;
             margin-top: 40px;
         }
-        .contact-form, .map-container {
+        .contact-form {
             background: white;
             padding: 40px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
@@ -489,12 +498,38 @@
         </div>
     </section>
 
-    <!-- Hours -->
+   <!-- Hours Section -->
     <section id="hours">
         <h2>Business Hours</h2>
         <div class="hours-box">
-            <div class="hours-row"><span class="hours-day">Monday – Saturday</span><span class="hours-time">7:30 AM – 9:30 PM</span></div>
-            <div class="hours-row"><span class="hours-day">Sunday</span><span class="hours-time">Closed</span></div>
+            <div class="hours-row">
+                <span class="hours-day">Monday</span>
+                <span class="hours-time">7:30 AM – 9:30 PM</span>
+            </div>
+            <div class="hours-row">
+                <span class="hours-day">Tuesday</span>
+                <span class="hours-time">7:30 AM – 9:30 PM</span>
+            </div>
+            <div class="hours-row">
+                <span class="hours-day">Wednesday</span>
+                <span class="hours-time">7:30 AM – 9:30 PM</span>
+            </div>
+            <div class="hours-row">
+                <span class="hours-day">Thursday</span>
+                <span class="hours-time">7:30 AM – 9:30 PM</span>
+            </div>
+            <div class="hours-row">
+                <span class="hours-day">Friday</span>
+                <span class="hours-time">7:30 AM – 9:30 PM</span>
+            </div>
+            <div class="hours-row">
+                <span class="hours-day">Saturday</span>
+                <span class="hours-time">7:30 AM – 9:30 PM</span>
+            </div>
+            <div class="hours-row">
+                <span class="hours-day">Sunday</span>
+                <span class="hours-time">Closed</span>
+            </div>
         </div>
         <p style="text-align: center; margin-top: 20px; color: #555;">
             <strong>Location:</strong> 1406 Pine Oak Pl, Edmond, OK 73034
@@ -535,20 +570,23 @@
                     <button type="submit" class="submit-btn">Send Message</button>
                 </form>
             </div>
-            <div class="map-container">
+         <div class="map-container">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3242.5237671006753!2d-97.47063682489255!3d35.63946517173024!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87b21fa7bdc67291%3A0xa8f3a56c454abd82!2sDirty%20Hands%20Clean%20Money%20Mobile%20Mechanic!5e0!3m2!1sen!2sus!4v1762897612628!5m2!1sen!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
 
+        <!-- Social Links -->
         <div class="social-links">
-            <a href="https://www.google.com/maps/place/..." target="_blank" class="social-link">Google Reviews</a>
-            <a href="https://nextdoor.com/pages/..." target="_blank" class="social-link">Nextdoor</a>
+            <a href="https://www.google.com/maps/place/Dirty+Hands+Clean+Money+Mobile+Mechanic/@35.6394652,-97.4706368,17z/data=!3m1!4b1!4m6!3m5!1s0x87b21fa7bdc67291:0xa8f3a56c454abd82!8m2!3d35.6394609!4d-97.4660234!16s%2Fg%2F11xgntmpkx?entry=ttu&g_ep=EgoyMDI1MTEwOS4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="social-link">Google Business</a>
+            <a href="https://nextdoor.com/pages/dirty-hands-clean-money-mobile-mechanic-edmond-ok/" target="_blank" class="social-link">Nextdoor</a>
         </div>
 
+        <!-- Square Payment Section -->
         <div class="square-section">
-            <h3 style="color: var(--primary-color);">Book & Pay Online</h3>
-            <p style="color: #555;">Secure appointment + payment in 60 seconds</p>
-            <a href="https://squareup.com/appointments/book/YOUR_LOCATION_ID" target="_blank" class="square-button">Book Now</a>
+            <h3 style="margin-bottom: 15px; color: var(--primary-color);">Online Booking & Payment</h3>
+            <p style="color: #555; margin-bottom: 20px;">Schedule your service and pay securely online with Square</p>
+            <!-- Replace YOUR_LOCATION_ID with your actual Square location ID -->
+            <a href="https://squareup.com/appointments/book/YOUR_LOCATION_ID" target="_blank" class="square-button">Book Appointment</a>
         </div>
     </section>
 
