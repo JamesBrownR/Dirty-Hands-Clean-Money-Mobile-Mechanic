@@ -89,7 +89,7 @@
         }
         .hero-content {
             z-index: 1;
-            max-width: 900px;
+            max-width: 9000px;
              width: 100%;
         }
         .hero h1 {
@@ -114,15 +114,18 @@
             opacity: 0.95;
         }
         .cta-button {
-            display: inline-block;
-            background-color: var(--accent-color);
+           display: block;
+            margin: 40px auto 0;
+            background-color: var(--secondary-color);
             color: var(--text-light);
-            text-decoration: none;
-            font-size: 1.3rem;
-            font-weight: 700;
-            transition: all 0.3s ease;
-            box-shadow: 0 6px 15px rgba(196, 30, 58, 0.4);
+            padding: 15px 40px;
+            border: none;
+            font-size: 1.1rem;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: background-color 0.3s;
         }
+         
         .cta-button:hover {
             background-color: #a01829;
             transform: translateY(-3px);
