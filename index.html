@@ -1,4 +1,4 @@
-```html
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -266,7 +266,7 @@
             padding: 20px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             border-radius: 12px;
-            height: 400px;
+             height: 100%;
         }
         .map-container iframe {
             width: 100%;
@@ -624,62 +624,66 @@
         <p>Phone: <a href="tel:5722288494" style="color: var(--text-light);">(572) 228-8494</a></p>
         <p style="margin-top: 20px;">© 2025 Dirty Hands Clean Money. All rights reserved.</p>
     </footer>
-    <script>
-        const reviews = [
-            { "name": "Brent Lawson", "rating": 5, "body": "Coty made a horrible situation (sheared cam shaft) much more bearable. He was quick to respond, knowledgeable, answered every question I had and frequently updated me on the status of the repair. My very best mobile mechanic experience, heck best mechanic experience period." },
-            { "name": "Jaime", "rating": 5, "body": "My van suddenly did not want to turn over after trying multiple times. I contacted Coty and without hesitation, he came through. He accurately diagnosed my car, fixed the problems in a timely manner, and all at a good price." },
-            { "name": "House on a Hill", "rating": 5, "body": "This guy is a real mechanic. As soon as he got out of his vehicle, he walked over, and I started my car. Within a few seconds, he guessed what the problem was, then confirmed it with the diagnostic tool." },
-            { "name": "Matt Biscoe", "rating": 5, "body": "As a business owner pulling equipment out of service means losing revenue. We called Coty last minute and he had us up and running within an hour. 10/10 would recommend!!!" },
-            { "name": "Mark Hochstetler", "rating": 5, "body": "Cody took care of a faulty starter I had and had me fixed up in about 30 minutes. Very friendly and professional. Will use again." },
-            { "name": "Ryan Stotts", "rating": 5, "body": "Does good quality work at a fair price. Recommended." },
-            { "name": "Noah McGraw", "rating": 5, "body": "Honest, kind and fair. Highly recommend!" },
-            { "name": "Craig Jones", "rating": 1, "body": "We made an appointment with Cody for Wednesday... Never heard from him again." }
-        ];
-        let currentReviewIndex = 0;
-        const reviewsPerLoad = 6;
-        function displayReviews(startIndex, count) {
-            const reviewsList = document.getElementById('reviews-list');
-            const endIndex = Math.min(startIndex + count, reviews.length);
-            for (let i = startIndex; i < endIndex; i++) {
-                const review = reviews[i];
-                const reviewCard = document.createElement('div');
-                reviewCard.className = 'review-card';
-                reviewCard.innerHTML = `
-                    <div class="review-header">
-                        <div class="review-name">${review.name}</div>
-                        <div class="stars">${'★'.repeat(review.rating)}</div>
-                    </div>
-                    ${review.body ? `<div class="review-body">${review.body}</div>` : ''}
-                `;
-                reviewsList.appendChild(reviewCard);
-            }
-            currentReviewIndex = endIndex;
-            const showMoreBtn = document.getElementById('show-more-reviews');
-            const remaining = reviews.length - currentReviewIndex;
-            if (remaining > 0) {
-                showMoreBtn.classList.remove('hidden');
-                const nextLoad = Math.min(remaining, reviewsPerLoad);
-                showMoreBtn.textContent = `Show ${nextLoad} More Review${nextLoad > 1 ? 's' : ''}`;
-            } else {
-                showMoreBtn.classList.add('hidden');
-            }
+   
+     <script>
+    const reviews = [
+        { "name": "Brent Lawson", "rating": 5, "body": "Coty made a horrible situation (sheared cam shaft) much more bearable. He was quick to respond, knowledgeable, answered every question I had and frequently updated me on the status of the repair. My very best mobile mechanic experience, heck best mechanic experience period." },
+        { "name": "Jaime", "rating": 5, "body": "My van suddenly did not want to turn over after trying multiple times. I contacted Coty and without hesitation, he came through. He accurately diagnosed my car, fixed the problems in a timely manner, and all at a good price." },
+        { "name": "House on a Hill", "rating": 5, "body": "This guy is a real mechanic. As soon as he got out of his vehicle, he walked over, and I started my car. Within a few seconds, he guessed what the problem was, then confirmed it with the diagnostic tool." },
+        { "name": "Matt Biscoe", "rating": 5, "body": "As a business owner pulling equipment out of service means losing revenue. We called Coty last minute and he had us up and running within an hour. 10/10 would recommend!!!" },
+        { "name": "Mark Hochstetler", "rating": 5, "body": "Cody took care of a faulty starter I had and had me fixed up in about 30 minutes. Very friendly and professional. Will use again." },
+        { "name": "Ryan Stotts", "rating": 5, "body": "Does good quality work at a fair price. Recommended." },
+        { "name": "Noah McGraw", "rating": 5, "body": "Honest, kind and fair. Highly recommend!" },
+        { "name": "Craig Jones", "rating": 1, "body": "We made an appointment with Cody for Wednesday... Never heard from him again." }
+    ];
+
+    const reviewsList = document.getElementById('reviews-list');
+    const showMoreBtn = document.getElementById('show-more-reviews');
+    let visibleReviews = 3; // Initially show 3 reviews; adjust as needed
+
+    function renderReviews(start = 0, end = visibleReviews) {
+        for (let i = start; i < end && i < reviews.length; i++) {
+            const review = reviews[i];
+            const card = document.createElement('div');
+            card.className = 'review-card';
+
+            const header = document.createElement('div');
+            header.className = 'review-header';
+
+            const name = document.createElement('span');
+            name.className = 'review-name';
+            name.textContent = review.name;
+
+            const stars = document.createElement('span');
+            stars.className = 'stars';
+            stars.textContent = '★'.repeat(review.rating) + '☆'.repeat(5 - review.rating);
+
+            header.appendChild(name);
+            header.appendChild(stars);
+
+            const body = document.createElement('p');
+            body.textContent = review.body;
+
+            card.appendChild(header);
+            card.appendChild(body);
+            reviewsList.appendChild(card);
         }
-        displayReviews(0, reviewsPerLoad);
-        document.getElementById('show-more-reviews').addEventListener('click', () => {
-            displayReviews(currentReviewIndex, reviewsPerLoad);
-        });
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-        document.getElementById('contact-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you! We'll call you within 15 minutes.');
-        });
-    </script>
+
+        if (visibleReviews < reviews.length) {
+            showMoreBtn.classList.remove('hidden');
+        } else {
+            showMoreBtn.classList.add('hidden');
+        }
+    }
+
+    renderReviews();
+
+    showMoreBtn.addEventListener('click', () => {
+        const start = visibleReviews;
+        visibleReviews += 3; // Load 3 more each time; adjust as needed
+        renderReviews(start, visibleReviews);
+    });
+</script>
+  
 </body>
 </html>
